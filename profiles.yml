@@ -1,0 +1,13 @@
+# SOLO para ejecutar dbt a mano (por ejemplo, con "dbt debug" en tu equipo).
+# En el Job de Databricks NO hace falta: Databricks genera el perfil por ti.
+curso_orquestacion:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: main
+      schema: curso_orquestacion
+      host: "{{ env_var('DBT_HOST') }}"
+      http_path: "{{ env_var('DBT_HTTP_PATH') }}"
+      token: "{{ env_var('DBT_ACCESS_TOKEN') }}"
+      threads: 4

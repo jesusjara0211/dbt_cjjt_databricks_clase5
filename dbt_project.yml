@@ -1,0 +1,22 @@
+name: 'curso_orquestacion'
+version: '1.0.0'
+config-version: 2
+
+# Nombre del perfil. Con la tarea dbt de Databricks (con SQL warehouse seleccionado)
+# el profiles.yml se genera automáticamente; este nombre solo debe existir.
+profile: 'curso_orquestacion'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+# Variables: dónde está la tabla de Plata que creó el notebook T6_03_Silver
+vars:
+  catalogo: "main"
+  esquema: "curso_orquestacion"
+
+models:
+  curso_orquestacion:
+    gold:
+      +materialized: table

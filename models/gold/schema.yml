@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: gold_ventas_por_pais
+    description: "Pedidos, ventas y ticket promedio por país"
+    columns:
+      - name: pais
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['Perú', 'Chile', 'Colombia', 'México']
+      - name: ventas
+        tests:
+          - not_null
+  - name: gold_ventas_por_producto
+    columns:
+      - name: producto
+        tests: [not_null, unique]
+  - name: gold_ventas_diarias
+    columns:
+      - name: fecha
+        tests: [not_null, unique]

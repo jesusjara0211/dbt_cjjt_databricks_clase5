@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: curso
+    database: "{{ var('catalogo') }}"
+    schema: "{{ var('esquema') }}"
+    tables:
+      - name: silver_pedidos
+        description: "Pedidos limpios que escribe el notebook T6_03_Silver"
+        columns:
+          - name: pedido_id
+            tests:
+              - not_null
+              - unique
+          - name: cantidad
+            tests:
+              - not_null
