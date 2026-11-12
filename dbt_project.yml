@@ -13,7 +13,7 @@ clean-targets: ["target", "dbt_packages"]
 
 # Variables: dónde está la tabla de Plata que creó el notebook T6_03_Silver
 vars:
-  catalogo: "main"
+  catalogo: "catalogo_jesus_levo"
   esquema: "curso_orquestacion"
 
 models:
