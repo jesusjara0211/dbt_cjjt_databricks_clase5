@@ -5,7 +5,7 @@ curso_orquestacion:
   outputs:
     dev:
       type: databricks
-      catalog: main
+      catalog: catalogo_jesus_levo
       schema: curso_orquestacion
       host: "{{ env_var('DBT_HOST') }}"
       http_path: "{{ env_var('DBT_HTTP_PATH') }}"
